@@ -239,42 +239,67 @@
       opacity: 0;
     }
 
-    /* ===== DESKTOP CENTERING FOR GIRL EMOJI ===== */
+    /* ===== CENTERING FOR GIRL EMOJI - ALL DEVICES ===== */
+    .hero-right-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-left: 1rem;
+    }
+
+    .hero-center-circle {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 640px) {
+      .hero-center-circle {
+        margin-left: 2rem;
+      }
+    }
+
+    .hero-top-cards {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 2%;
+      margin-bottom: 1rem;
+    }
+
+    .hero-bottom-cards {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 2%;
+      margin-top: 1rem;
+    }
+
+    /* Desktop specific positioning */
     @media (min-width: 1024px) {
       .hero-right-wrapper {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        height: 100% !important;
-        min-height: 540px !important;
-        position: relative !important;
-      }
-
-      .hero-center-circle {
-        position: relative !important;
-        margin: 0 auto !important;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
+        height: 100%;
+        min-height: 540px;
       }
 
       .hero-top-cards {
-        position: absolute !important;
-        top: 5% !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        padding: 0 10% !important;
+        position: absolute;
+        top: 5%;
+        left: 0;
+        right: 0;
+        margin-bottom: 0;
+        padding: 0 10%;
       }
 
       .hero-bottom-cards {
-        position: absolute !important;
-        bottom: 5% !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100% !important;
-        padding: 0 10% !important;
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        padding: 0 10%;
       }
     }
   </style>
@@ -413,8 +438,7 @@
       </div>
 
       <!-- RIGHT - CENTERED on all devices -->
-      <div class="hero-right-wrapper w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0 mt-4 lg:mt-0"
-        data-anim="fade-up">
+      <div class="hero-right-wrapper w-full max-w-[400px] mx-auto mt-4 lg:mt-0" data-anim="fade-up">
         <!-- TOP ROW -->
         <div class="hero-top-cards flex items-start justify-between w-full px-2 z-20">
           <div class="bg-white ink-border rounded-2xl p-3 sm:p-4 sh-4 floaty -rotate-[4deg] w-[150px] sm:w-[170px]"
@@ -437,7 +461,7 @@
 
         <!-- CENTER: Girl Emoji Circle - CENTERED -->
         <div
-          class="hero-center-circle w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] rounded-full ink-border sh-6 floaty overflow-hidden flex items-end justify-center z-10 my-4 lg:my-0"
+          class="hero-center-circle w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] rounded-full ink-border sh-6 floaty overflow-hidden flex items-end justify-center z-10 my-4 lg:my-0 ml-4 sm:ml-6 lg:ml-0"
           style="background: linear-gradient(135deg, #f9a8d4 0%, #ff6a3d 100%); --r:0deg;">
           <div class="text-[150px] sm:text-[170px] lg:text-[240px] -mb-2 leading-none">👩‍🏫</div>
         </div>
