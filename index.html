@@ -2,19 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thrive Clip Productions — School stories that fill seats</title>
   <meta name="description"
-    content="We live and breathe school stories. Documentary-style admissions campaigns for K-12 schools across Jaipur." />
-
+    content="We live and breathe school stories. Documentary-style admissions campaigns for K-12 schools across Jaipur.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@500;700&display=swap"
-    rel="stylesheet" />
-
+    rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -37,7 +35,6 @@
       },
     };
   </script>
-
   <style>
     * {
       box-sizing: border-box;
@@ -120,9 +117,7 @@
     }
 
     .line-grid {
-      background-image:
-        linear-gradient(rgba(26, 26, 46, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26, 26, 46, 0.04) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(26, 26, 46, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 26, 46, 0.04) 1px, transparent 1px);
       background-size: 32px 32px;
     }
 
@@ -186,7 +181,6 @@
       animation: floaty 5s ease-in-out infinite;
     }
 
-    /* On small screens, reduce float distance so cards stay inside their container */
     @media (max-width: 640px) {
       @keyframes floaty {
 
@@ -244,24 +238,80 @@
     [data-anim] {
       opacity: 0;
     }
+
+    /* ===== DESKTOP CENTERING FOR GIRL EMOJI ===== */
+    @media (min-width: 1024px) {
+      .hero-right-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 100% !important;
+        min-height: 540px !important;
+        position: relative !important;
+      }
+
+      .hero-center-circle {
+        position: relative !important;
+        margin: 0 auto !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+      }
+
+      .hero-top-cards {
+        position: absolute !important;
+        top: 5% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        padding: 0 10% !important;
+      }
+
+      .hero-bottom-cards {
+        position: absolute !important;
+        bottom: 5% !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        padding: 0 10% !important;
+      }
+    }
   </style>
   <base target="_blank">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '858425540607596');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=858425540607596&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
   <base target="_blank">
 </head>
 
 <body class="overflow-x-hidden">
 
-  <!-- ============== NAV ============== -->
+  <!-- NAV -->
   <header class="sticky top-0 z-40 bg-paper/85 backdrop-blur-md">
     <div class="max-w-[1440px] mx-auto px-5 md:px-10 lg:px-16 py-4 md:py-6 flex items-center justify-between gap-4">
-
       <div class="relative" data-anim="fade-down">
         <div class="bg-white ink-border rounded-[28px] py-2 pl-2 pr-4 flex items-center gap-2.5 sh-3 bubble-tail">
-          <img src="tcp-logo.jpeg" alt="TCP" class="w-9 h-9 rounded-full ink-border object-cover" />
+          <img src="tcp-logo.jpeg" alt="TCP" class="w-9 h-9 rounded-full ink-border object-cover">
           <span class="font-extrabold text-[17px] tracking-tight">TCP!</span>
         </div>
       </div>
-
       <nav class="hidden lg:flex items-center gap-1 bg-white ink-border rounded-full p-1.5 sh-3" data-anim="fade-down">
         <a href="#why" class="px-5 py-2.5 text-sm font-semibold rounded-full hover:bg-sun transition">Why TCP</a>
         <a href="#process" class="px-5 py-2.5 text-sm font-semibold rounded-full hover:bg-sun transition">Process</a>
@@ -269,7 +319,7 @@
         <a href="#voices" class="px-5 py-2.5 text-sm font-semibold rounded-full hover:bg-sun transition">Voices</a>
         <a href="#faq" class="px-5 py-2.5 text-sm font-semibold rounded-full hover:bg-sun transition">FAQ</a>
       </nav>
-
+      <!-- REMOVED: onclick fbq Lead from nav button -->
       <a href="#audit"
         class="hidden md:inline-flex items-center gap-2.5 bg-orange text-white ink-border rounded-full px-5 py-3 text-sm font-bold sh-4 btn-press"
         data-anim="fade-down">
@@ -277,7 +327,6 @@
         Free School Audit
         <span class="text-base">→</span>
       </a>
-
       <button id="menuBtn" class="lg:hidden ink-border rounded-full p-2 bg-white sh-2" aria-label="Open menu">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
           stroke-linecap="round">
@@ -285,7 +334,6 @@
         </svg>
       </button>
     </div>
-
     <div id="mobileMenu" class="hidden lg:hidden border-t-2 border-ink/10 bg-paper">
       <ul class="px-5 py-4 space-y-1">
         <li><a href="#why" class="block py-2.5 font-semibold">Why TCP</a></li>
@@ -300,9 +348,8 @@
     </div>
   </header>
 
-  <!-- ============== HERO ============== -->
+  <!-- HERO -->
   <section class="relative px-5 md:px-10 lg:px-16 pt-6 md:pt-10 pb-16 md:pb-20 max-w-[1440px] mx-auto">
-
     <div class="hidden md:block absolute top-32 right-32 w-6 h-6 bg-pink rounded-md rotate-12 floaty"
       style="--r:12deg;"></div>
     <div class="hidden md:block absolute top-48 right-72 w-4 h-4 bg-sun rounded floaty" style="animation-delay:.6s;">
@@ -311,16 +358,13 @@
       style="animation-delay:.3s;"></div>
     <div class="hidden md:block absolute top-20 right-[36%] text-2xl floaty" style="animation-delay:.5s;">✦</div>
     <div class="hidden md:block absolute top-[480px] right-[40%] text-base floaty" style="animation-delay:1s;">✦</div>
-
     <div
       class="hidden md:block absolute top-12 right-10 lg:right-16 w-[55%] max-w-[720px] h-[540px] line-grid rounded-3xl pointer-events-none">
     </div>
 
     <div class="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start relative z-10">
-
       <!-- LEFT -->
       <div data-anim="fade-up">
-
         <div class="relative inline-block mb-7">
           <div
             class="bg-white ink-border rounded-full px-5 py-3 inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.08em] uppercase bubble-tail">
@@ -328,13 +372,11 @@
             Hello, principals of Jaipur 👋
           </div>
         </div>
-
         <h1 class="h-hero">
           We live and breathe
           <span class="tag-block">school</span>
           stories.
         </h1>
-
         <div class="flex items-center gap-5 mt-9 flex-wrap">
           <div class="bg-white ink-border rounded-2xl px-4 py-3 flex items-center gap-3 sh-3">
             <span class="text-2xl">🎓</span>
@@ -353,17 +395,16 @@
             <span class="font-hand text-[22px] text-orange -rotate-6">that's the goal!</span>
           </div>
         </div>
-
+        <!-- REMOVED: onclick fbq Lead from hero form button -->
         <form class="mt-12 max-w-[480px] bg-white ink-border rounded-full p-1.5 flex items-center sh-4"
           onsubmit="event.preventDefault(); document.getElementById('audit').scrollIntoView({behavior:'smooth'});">
           <input type="url" placeholder="Your school's website…"
-            class="flex-1 bg-transparent outline-none px-5 py-3 text-[15px] placeholder:text-ink/45 min-w-0" />
-          <button
+            class="flex-1 bg-transparent outline-none px-5 py-3 text-[15px] placeholder:text-ink/45 min-w-0">
+          <button type="button" onclick="document.getElementById('audit').scrollIntoView({behavior:'smooth'});"
             class="bg-orange text-white ink-border rounded-full px-5 py-3 text-sm font-bold whitespace-nowrap inline-flex items-center gap-2 btn-press">
             Book Free Audit <span>→</span>
           </button>
         </form>
-
         <ul class="flex items-center flex-wrap gap-x-5 gap-y-2 mt-4 text-[13px] text-ink/65">
           <li>✓ 30 min</li>
           <li>✓ No deck</li>
@@ -371,15 +412,11 @@
         </ul>
       </div>
 
-      <!-- RIGHT - illustration cluster -->
-      <div
-        class="relative w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0 mt-4 lg:mt-0 flex flex-col items-center gap-4 lg:block lg:h-[540px]"
+      <!-- RIGHT - CENTERED on all devices -->
+      <div class="hero-right-wrapper w-full max-w-[400px] mx-auto lg:max-w-none lg:mx-0 mt-4 lg:mt-0"
         data-anim="fade-up">
-
-        <!-- TOP ROW: Admissions + Cost/Lead -->
-        <div
-          class="flex items-start justify-between w-full px-2 lg:absolute lg:top-[8%] lg:left-[5%] lg:right-[5%] lg:px-0 z-20">
-          <!-- Admissions card -->
+        <!-- TOP ROW -->
+        <div class="hero-top-cards flex items-start justify-between w-full px-2 z-20">
           <div class="bg-white ink-border rounded-2xl p-3 sm:p-4 sh-4 floaty -rotate-[4deg] w-[150px] sm:w-[170px]"
             style="--r:-4deg; animation-delay:.2s;">
             <div class="text-[10px] tracking-[0.08em] font-bold uppercase text-ink/55">Admissions ↗</div>
@@ -391,7 +428,6 @@
             </svg>
             <div class="text-[10px] text-ink/55 mt-1">vs last cycle</div>
           </div>
-          <!-- Cost/Lead card -->
           <div class="bg-white ink-border rounded-2xl px-4 py-3 sm:px-5 sm:py-4 sh-4 floaty rotate-[5deg]"
             style="--r:5deg; animation-delay:.5s;">
             <div class="text-[10px] tracking-[0.08em] font-bold uppercase text-ink/55">Cost / Lead</div>
@@ -399,17 +435,15 @@
           </div>
         </div>
 
-        <!-- CENTER: Pink circle with emoji -->
+        <!-- CENTER: Girl Emoji Circle - CENTERED -->
         <div
-          class="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 mx-auto lg:mx-0 rounded-full ink-border sh-6 floaty overflow-hidden flex items-end justify-center z-10"
+          class="hero-center-circle w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] rounded-full ink-border sh-6 floaty overflow-hidden flex items-end justify-center z-10 my-4 lg:my-0"
           style="background: linear-gradient(135deg, #f9a8d4 0%, #ff6a3d 100%); --r:0deg;">
-          <div class="text-[150px] sm:text-[170px] lg:text-[230px] -mb-2 leading-none">👩‍🏫</div>
+          <div class="text-[150px] sm:text-[170px] lg:text-[240px] -mb-2 leading-none">👩‍🏫</div>
         </div>
 
-        <!-- BOTTOM ROW: 40+ schools + Quote -->
-        <div
-          class="flex items-end justify-between w-full px-2 lg:absolute lg:bottom-[8%] lg:left-[5%] lg:right-[5%] lg:px-0 z-20">
-          <!-- Trophy badge -->
+        <!-- BOTTOM ROW -->
+        <div class="hero-bottom-cards flex items-end justify-between w-full px-2 z-20">
           <div class="bg-white ink-border rounded-3xl px-4 py-2.5 sm:px-5 sm:py-3 sh-3 floaty flex items-center gap-2.5"
             style="--r:0deg; animation-delay:1s;">
             <span class="text-[20px] sm:text-[22px]">🏆</span>
@@ -418,7 +452,6 @@
               <div class="text-[10px] text-ink/55">across Rajasthan</div>
             </div>
           </div>
-          <!-- Quote bubble -->
           <div
             class="bg-sun ink-border rounded-3xl px-4 py-3 sm:px-5 sm:py-4 max-w-[170px] sm:max-w-[200px] sh-3 floaty rotate-[3deg]"
             style="--r:3deg; animation-delay:.8s;">
@@ -431,12 +464,11 @@
     </div>
   </section>
 
-  <!-- ============== COLOR BLOB DIVIDER ============== -->
+  <!-- COLOR BLOB DIVIDER -->
   <section class="px-5 md:px-10 lg:px-16 max-w-[1440px] mx-auto" data-anim="fade-up">
     <div
       class="ink-border sh-5 rounded-[36px] md:rounded-full px-6 md:px-12 py-7 md:py-8 flex flex-col md:flex-row items-center justify-between gap-6"
       style="background: linear-gradient(120deg, #b794f4 0%, #f9a8d4 50%, #ff6a3d 100%);">
-
       <div class="flex flex-wrap items-center gap-2 md:gap-3 justify-center">
         <div
           class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-white ink-border flex items-center justify-center text-[22px]">
@@ -457,118 +489,86 @@
           class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-white ink-border flex items-center justify-center text-[22px]">
           🎯</div>
       </div>
-
-      <div class="h-banner text-white text-center" style="text-shadow: 2px 2px 0 #1a1a2e;">
-        School<br />
-        <span class="italic">stories.</span>
-      </div>
-
+      <div class="h-banner text-white text-center" style="text-shadow: 2px 2px 0 #1a1a2e;">School<br><span
+          class="italic">stories.</span></div>
       <div class="bg-white ink-border rounded-2xl px-5 py-4 sh-3 min-w-[200px] text-center md:text-left">
-        <div class="font-hand text-[24px] leading-tight">
-          We live & breathe<br />
-          <span class="text-orange">school stories</span>
-        </div>
+        <div class="font-hand text-[24px] leading-tight">We live & breathe<br><span class="text-orange">school
+            stories</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ============== WHO WE ARE ============== -->
+  <!-- WHO WE ARE -->
   <section id="why" class="px-5 md:px-10 lg:px-16 max-w-[1440px] mx-auto pt-24 md:pt-32 pb-16 md:pb-20">
     <div class="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
       <div data-anim="fade-up">
-        <p class="text-[17px] leading-[1.65] text-ink/85">
-          We live and breathe school stories — and creativity runs through every part of what we do.
-        </p>
-        <p class="text-[17px] leading-[1.65] text-ink/85 mt-4">
-          We work with K-12 schools across Jaipur as a partner, not a vendor — building admissions campaigns that turn
-          parent attention into walk-ins, one cycle at a time.
-        </p>
+        <p class="text-[17px] leading-[1.65] text-ink/85">We live and breathe school stories — and creativity runs
+          through every part of what we do.</p>
+        <p class="text-[17px] leading-[1.65] text-ink/85 mt-4">We work with K-12 schools across Jaipur as a partner, not
+          a vendor — building admissions campaigns that turn parent attention into walk-ins, one cycle at a time.</p>
       </div>
       <div data-anim="fade-up">
-        <p class="text-[19px] leading-[1.55] font-medium">
-          We are a team of <span class="hl-yellow">filmmakers</span>,
-          <span class="hl-pink">strategists</span>,
-          <span class="hl-blue">media buyers</span>,
-          <span class="hl-green">storytellers</span>, and
-          <span class="hl-purple">educators</span>.
-        </p>
+        <p class="text-[19px] leading-[1.55] font-medium">We are a team of <span class="hl-yellow">filmmakers</span>,
+          <span class="hl-pink">strategists</span>, <span class="hl-blue">media buyers</span>, <span
+            class="hl-green">storytellers</span>, and <span class="hl-purple">educators</span>.</p>
         <a href="#process"
           class="mt-7 inline-flex items-center gap-2.5 bg-orange text-white ink-border rounded-full px-7 py-4 text-base font-bold sh-4 btn-press">
-          <span class="w-2 h-2 rounded-full bg-white"></span>
-          Learn more about TCP
-          <span>→</span>
+          <span class="w-2 h-2 rounded-full bg-white"></span>Learn more about TCP<span>→</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============== PROBLEM ============== -->
+  <!-- PROBLEM -->
   <section class="px-5 md:px-10 lg:px-16 max-w-[1440px] mx-auto py-16 md:py-24">
-
     <div class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-5 mb-12 md:mb-14"
       data-anim="fade-up">
       <div
         class="bg-ink text-white rounded-full px-5 py-2 text-[12px] font-bold tracking-[0.08em] uppercase whitespace-nowrap">
         The Problem</div>
-      <h2 class="h-section">
-        You're not short on content. You're short on <span class="text-orange italic">results.</span>
-      </h2>
+      <h2 class="h-section">You're not short on content. You're short on <span
+          class="text-orange italic">results.</span></h2>
     </div>
-
     <div class="grid md:grid-cols-3 gap-5 md:gap-6">
-
       <article class="bg-white ink-border rounded-3xl p-7 sh-5 flex flex-col gap-4 md:min-h-[280px]"
         data-anim="fade-up">
         <div class="w-16 h-16 rounded-2xl bg-pink ink-border flex items-center justify-center text-[32px]">📭</div>
         <h3 class="text-[22px] font-extrabold tracking-tight">Empty seats, full inboxes</h3>
-        <p class="text-[15px] leading-[1.55] text-ink/70">
-          You're spending on hoardings, newspaper inserts, and 'reels packages' — but the admissions team is still
-          chasing the same parents.
-        </p>
+        <p class="text-[15px] leading-[1.55] text-ink/70">You're spending on hoardings, newspaper inserts, and 'reels
+          packages' — but the admissions team is still chasing the same parents.</p>
       </article>
-
       <article class="bg-white ink-border rounded-3xl p-7 sh-5 flex flex-col gap-4 md:min-h-[280px]"
         data-anim="fade-up">
         <div class="w-16 h-16 rounded-2xl bg-sun ink-border flex items-center justify-center text-[32px]">🎬</div>
         <h3 class="text-[22px] font-extrabold tracking-tight">Content that nobody watches</h3>
-        <p class="text-[15px] leading-[1.55] text-ink/70">
-          Generic school b-roll set to royalty-free music. Parents scroll past in 0.6 seconds. The footage ages out
-          before the next admission cycle.
-        </p>
+        <p class="text-[15px] leading-[1.55] text-ink/70">Generic school b-roll set to royalty-free music. Parents
+          scroll past in 0.6 seconds. The footage ages out before the next admission cycle.</p>
       </article>
-
       <article class="bg-white ink-border rounded-3xl p-7 sh-5 flex flex-col gap-4 md:min-h-[280px]"
         data-anim="fade-up">
         <div class="w-16 h-16 rounded-2xl bg-sky ink-border flex items-center justify-center text-[32px]">🔥</div>
         <h3 class="text-[22px] font-extrabold tracking-tight">Ads that burn budget</h3>
-        <p class="text-[15px] leading-[1.55] text-ink/70">
-          Boosted posts, no targeting, no funnel. Your CPL keeps climbing and there's no story to tell the trustees at
-          the end of the quarter.
-        </p>
+        <p class="text-[15px] leading-[1.55] text-ink/70">Boosted posts, no targeting, no funnel. Your CPL keeps
+          climbing and there's no story to tell the trustees at the end of the quarter.</p>
       </article>
     </div>
   </section>
 
-  <!-- ============== HOW IT WORKS ============== -->
+  <!-- HOW IT WORKS -->
   <section id="process" class="px-5 md:px-10 lg:px-16 max-w-[1440px] mx-auto py-16 md:py-24">
-
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-12" data-anim="fade-up">
       <div>
         <div
           class="bg-orange text-white ink-border rounded-full px-5 py-2 text-[13px] font-bold tracking-[0.08em] uppercase inline-block sh-3">
           How it works</div>
-        <h2 class="h-section mt-5">
-          Three steps. <span class="font-hand text-orange font-bold">One admissions cycle.</span>
-        </h2>
+        <h2 class="h-section mt-5">Three steps. <span class="font-hand text-orange font-bold">One admissions
+            cycle.</span></h2>
       </div>
       <div
         class="bg-sun ink-border rounded-2xl px-4 py-2.5 text-[13px] font-bold sh-3 rotate-2 self-start md:self-auto whitespace-nowrap">
-        Day 0 → Day 90
-      </div>
+        Day 0 → Day 90</div>
     </div>
-
     <div class="bg-white ink-border rounded-[28px] sh-5 overflow-hidden" data-anim="fade-up">
-
       <div
         class="grid grid-cols-[auto_auto_1fr_auto] md:grid-cols-[120px_72px_1fr_60px] gap-4 md:gap-6 items-center px-5 md:px-8 py-6 md:py-7 border-b-[1.5px] border-ink/15 hover:bg-paper/40 transition">
         <div class="w-16 h-16 md:w-[84px] md:h-[84px] rounded-full ink-border flex items-center justify-center shrink-0"
@@ -582,16 +582,13 @@
           01</div>
         <div class="min-w-0">
           <h3 class="text-lg md:text-2xl font-extrabold tracking-tight">Free School Audit</h3>
-          <p class="text-[13px] md:text-[14px] leading-[1.5] text-ink/65 mt-1.5 max-w-[640px]">
-            30-min call. We map your admissions funnel, audit your social, and identify the 3 leaks costing you
-            applications this season.
-          </p>
+          <p class="text-[13px] md:text-[14px] leading-[1.5] text-ink/65 mt-1.5 max-w-[640px]">30-min call. We map your
+            admissions funnel, audit your social, and identify the 3 leaks costing you applications this season.</p>
         </div>
         <a href="#audit"
           class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white ink-border flex items-center justify-center text-orange text-lg md:text-xl hover:bg-orange hover:text-white transition justify-self-end"
           aria-label="Go to audit">↗</a>
       </div>
-
       <div
         class="grid grid-cols-[auto_auto_1fr_auto] md:grid-cols-[120px_72px_1fr_60px] gap-4 md:gap-6 items-center px-5 md:px-8 py-6 md:py-7 border-b-[1.5px] border-ink/15 hover:bg-paper/40 transition">
         <div class="w-16 h-16 md:w-[84px] md:h-[84px] rounded-full ink-border flex items-center justify-center shrink-0"
@@ -605,16 +602,14 @@
           02</div>
         <div class="min-w-0">
           <h3 class="text-lg md:text-2xl font-extrabold tracking-tight">Story-First Production</h3>
-          <p class="text-[13px] md:text-[14px] leading-[1.5] text-ink/65 mt-1.5 max-w-[640px]">
-            We shoot what parents actually want to see — students, teachers, real classroom moments — in documentary
-            style. No stock, no stiffness.
-          </p>
+          <p class="text-[13px] md:text-[14px] leading-[1.5] text-ink/65 mt-1.5 max-w-[640px]">We shoot what parents
+            actually want to see — students, teachers, real classroom moments — in documentary style. No stock, no
+            stiffness.</p>
         </div>
         <a href="#audit"
           class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white ink-border flex items-center justify-center text-orange text-lg md:text-xl hover:bg-orange hover:text-white transition justify-self-end"
           aria-label="Go to audit">↗</a>
       </div>
-
       <div
         class="grid grid-cols-[auto_auto_1fr_auto] md:grid-cols-[120px_72px_1fr_60px] gap-4 md:gap-6 items-center px-5 md:px-8 py-6 md:py-7 hover:bg-paper/40 transition">
         <div class="w-16 h-16 md:w-[84px] md:h-[84px] rounded-full ink-border flex items-center justify-center shrink-0"
@@ -628,10 +623,8 @@
           03</div>
         <div class="min-w-0">
           <h3 class="text-lg md:text-2xl font-extrabold tracking-tight">Performance Campaigns</h3>
-          <p class="text-[13px] md:text-[14px] leading-[1.5] text-ink/65 mt-1.5 max-w-[640px]">
-            Geo-targeted ads across Meta and YouTube, optimized weekly. You get a live dashboard showing CPL, walk-ins,
-            and applications.
-          </p>
+          <p class="text-[13px] md:text-[14px] leading-[1.5] text-ink/65 mt-1.5 max-w-[640px]">Geo-targeted ads across
+            Meta and YouTube, optimized weekly. You get a live dashboard showing CPL, walk-ins, and applications.</p>
         </div>
         <a href="#audit"
           class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white ink-border flex items-center justify-center text-orange text-lg md:text-xl hover:bg-orange hover:text-white transition justify-self-end"
@@ -640,32 +633,24 @@
     </div>
   </section>
 
-  <!-- ============== TESTIMONIALS ============== -->
+  <!-- TESTIMONIALS -->
   <section id="voices" class="px-5 md:px-10 lg:px-16 max-w-[1440px] mx-auto py-16 md:py-20">
-
     <div class="grid lg:grid-cols-[260px_1fr_220px] gap-6 md:gap-12 lg:gap-12 items-end mb-8 md:mb-10"
       data-anim="fade-up">
       <div>
         <div class="text-[12px] font-bold text-ink/55 tracking-[0.12em] uppercase">Our Voices</div>
-        <h2 class="text-[32px] md:text-[36px] font-extrabold mt-2 leading-[1.1]">
-          Heard from<br />The <span class="text-orange">Principals</span>
-        </h2>
+        <h2 class="text-[32px] md:text-[36px] font-extrabold mt-2 leading-[1.1]">Heard from<br>The <span
+            class="text-orange">Principals</span></h2>
       </div>
-      <p class="text-[15px] md:text-[17px] leading-[1.5] text-ink/75">
-        What heads of school across Jaipur say after working with TCP — <span class="hl-yellow">real numbers, real
-          reels, real walk-ins.</span>
-      </p>
+      <p class="text-[15px] md:text-[17px] leading-[1.5] text-ink/75">What heads of school across Jaipur say after
+        working with TCP — <span class="hl-yellow">real numbers, real reels, real walk-ins.</span></p>
       <a href="#"
         class="inline-flex items-center gap-2.5 bg-white ink-border rounded-full px-5 py-3 text-sm font-semibold sh-3 btn-press whitespace-nowrap self-start lg:self-auto">
-        <span class="w-2 h-2 rounded-full bg-orange"></span>
-        Read the case studies
-        <span>→</span>
+        <span class="w-2 h-2 rounded-full bg-orange"></span>Read the case studies<span>→</span>
       </a>
     </div>
-
     <div class="ink-border sh-5 rounded-[24px] p-4 md:p-8 grid md:grid-cols-3 gap-4 md:gap-5"
       style="background: linear-gradient(120deg, #b794f4 0%, #f9a8d4 50%, #7dd3fc 100%);" data-anim="fade-up">
-
       <article class="bg-white ink-border rounded-3xl p-6 flex flex-col gap-4 md:min-h-[280px]">
         <div class="flex items-center gap-3">
           <div class="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
@@ -677,13 +662,10 @@
             <div class="text-[11px] text-ink/65">Principal, K-12 private school, Jaipur</div>
           </div>
         </div>
-        <p class="text-[15px] leading-[1.5] font-medium flex-1">
-          "Our admission inquiries went up 3.4x in one cycle. The TCP team understood our school's voice better than our
-          in-house comms."
-        </p>
+        <p class="text-[15px] leading-[1.5] font-medium flex-1">"Our admission inquiries went up 3.4x in one cycle. The
+          TCP team understood our school's voice better than our in-house comms."</p>
         <div class="flex gap-1 text-orange">★★★★★</div>
       </article>
-
       <article class="bg-sun ink-border rounded-3xl p-6 flex flex-col gap-4 md:min-h-[280px]">
         <div class="flex items-center gap-3">
           <div class="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
@@ -695,12 +677,10 @@
             <div class="text-[11px] text-ink/65">Trustee, residential school, Rajasthan</div>
           </div>
         </div>
-        <p class="text-[15px] leading-[1.5] font-medium flex-1">
-          "We finally have ad campaigns we can defend in a trustee meeting. Numbers, not guesses."
-        </p>
+        <p class="text-[15px] leading-[1.5] font-medium flex-1">"We finally have ad campaigns we can defend in a trustee
+          meeting. Numbers, not guesses."</p>
         <div class="flex gap-1 text-orange">★★★★★</div>
       </article>
-
       <article class="bg-white ink-border rounded-3xl p-6 flex flex-col gap-4 md:min-h-[280px]">
         <div class="flex items-center gap-3">
           <div class="w-14 h-14 rounded-full flex items-center justify-center shrink-0"
@@ -712,26 +692,19 @@
             <div class="text-[11px] text-ink/65">Director of Admissions</div>
           </div>
         </div>
-        <p class="text-[15px] leading-[1.5] font-medium flex-1">
-          "The documentary they made about our boarding house is what convinced 40% of this year's parents to visit
-          campus."
-        </p>
+        <p class="text-[15px] leading-[1.5] font-medium flex-1">"The documentary they made about our boarding house is
+          what convinced 40% of this year's parents to visit campus."</p>
         <div class="flex gap-1 text-orange">★★★★★</div>
       </article>
     </div>
   </section>
 
-  <!-- ============== FAQ ============== -->
+  <!-- FAQ -->
   <section id="faq" class="px-5 md:px-10 lg:px-16 max-w-[1440px] mx-auto py-16 md:py-24">
-
     <div class="grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-16 items-start">
-
       <div data-anim="fade-up">
         <div class="text-[12px] font-bold text-ink/55 tracking-[0.12em] uppercase">FAQ</div>
-        <h2 class="h-section mt-3">
-          Things <span class="font-hand text-orange font-bold">trustees</span> ask first.
-        </h2>
-
+        <h2 class="h-section mt-3">Things <span class="font-hand text-orange font-bold">trustees</span> ask first.</h2>
         <div class="bg-white ink-border rounded-3xl p-5 sh-4 mt-8 max-w-sm">
           <div class="flex items-center gap-3 mb-3">
             <div class="w-12 h-12 rounded-full ink-border flex items-center justify-center"
@@ -746,15 +719,11 @@
           <a href="https://wa.me/917258055245?text=Hello%20team%20ThriveClip%20Productions%2C%20I%20have%20a%20question."
             target="_blank" rel="noopener"
             class="bg-orange text-white ink-border rounded-full px-5 py-2.5 text-sm font-bold sh-3 btn-press inline-flex items-center gap-2.5">
-            <span class="w-2 h-2 rounded-full bg-white"></span>
-            Chat on WhatsApp
-            <span>→</span>
+            <span class="w-2 h-2 rounded-full bg-white"></span>Chat on WhatsApp<span>→</span>
           </a>
         </div>
       </div>
-
       <div class="space-y-3" data-anim="fade-up">
-
         <details open class="faq-item group bg-sun ink-border rounded-[20px] sh-4">
           <summary class="cursor-pointer list-none px-5 md:px-6 py-5 flex items-center justify-between gap-4">
             <div class="flex items-center gap-3 flex-1 min-w-0">
@@ -766,12 +735,10 @@
             <span
               class="w-8 h-8 rounded-full bg-white ink-border flex items-center justify-center text-lg font-bold shrink-0 transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">
-            A 30-minute call where we review your school's current social presence, ad spend, and admissions funnel —
-            then send a written diagnostic with 3 specific fixes you can action whether you work with us or not.
-          </p>
+          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">A 30-minute call
+            where we review your school's current social presence, ad spend, and admissions funnel — then send a written
+            diagnostic with 3 specific fixes you can action whether you work with us or not.</p>
         </details>
-
         <details class="faq-item group bg-white ink-border rounded-[20px] sh-2">
           <summary class="cursor-pointer list-none px-5 md:px-6 py-5 flex items-center justify-between gap-4">
             <div class="flex items-center gap-3 flex-1 min-w-0">
@@ -783,13 +750,11 @@
             <span
               class="w-8 h-8 rounded-full bg-white ink-border flex items-center justify-center text-lg font-bold shrink-0 transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">
-            We don't sell 'content packages.' We're hired to move admissions numbers. Every reel, every ad, every
-            parent-facing video maps to a measurable outcome — applications, walk-ins, or cost-per-lead — agreed before
-            we shoot a frame.
+          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">We don't sell
+            'content packages.' We're hired to move admissions numbers. Every reel, every ad, every parent-facing video
+            maps to a measurable outcome — applications, walk-ins, or cost-per-lead — agreed before we shoot a frame.
           </p>
         </details>
-
         <details class="faq-item group bg-white ink-border rounded-[20px] sh-2">
           <summary class="cursor-pointer list-none px-5 md:px-6 py-5 flex items-center justify-between gap-4">
             <div class="flex items-center gap-3 flex-1 min-w-0">
@@ -801,13 +766,11 @@
             <span
               class="w-8 h-8 rounded-full bg-white ink-border flex items-center justify-center text-lg font-bold shrink-0 transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">
-            Yes. We're based in Jaipur and have shot inside K-12 campuses across the city. We know the parent-decision
-            cycle here, what reads as 'premium' to a Rajasthani parent vs. a transferred-in family, and which platforms
-            actually drive admission walk-ins locally.
-          </p>
+          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">Yes. We're based in
+            Jaipur and have shot inside K-12 campuses across the city. We know the parent-decision cycle here, what
+            reads as 'premium' to a Rajasthani parent vs. a transferred-in family, and which platforms actually drive
+            admission walk-ins locally.</p>
         </details>
-
         <details class="faq-item group bg-white ink-border rounded-[20px] sh-2">
           <summary class="cursor-pointer list-none px-5 md:px-6 py-5 flex items-center justify-between gap-4">
             <div class="flex items-center gap-3 flex-1 min-w-0">
@@ -819,12 +782,10 @@
             <span
               class="w-8 h-8 rounded-full bg-white ink-border flex items-center justify-center text-lg font-bold shrink-0 transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">
-            Brand-recall lift in 30 days. Cost-per-lead reduction by week 6. Admission-quality leads in the funnel by
-            month 2 — assuming a typical mid-cycle launch. We share a weekly dashboard so you're never guessing.
-          </p>
+          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">Brand-recall lift in
+            30 days. Cost-per-lead reduction by week 6. Admission-quality leads in the funnel by month 2 — assuming a
+            typical mid-cycle launch. We share a weekly dashboard so you're never guessing.</p>
         </details>
-
         <details class="faq-item group bg-white ink-border rounded-[20px] sh-2">
           <summary class="cursor-pointer list-none px-5 md:px-6 py-5 flex items-center justify-between gap-4">
             <div class="flex items-center gap-3 flex-1 min-w-0">
@@ -835,45 +796,32 @@
             <span
               class="w-8 h-8 rounded-full bg-white ink-border flex items-center justify-center text-lg font-bold shrink-0 transition-transform group-open:rotate-45">+</span>
           </summary>
-          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">
-            Engagements start at the equivalent of one extra admission per month. We scope per-school after the audit —
-            pricing depends on shoot days, ad spend, and campaign length. No retainer lock-ins.
-          </p>
+          <p class="px-5 md:px-6 pb-5 pl-[60px] md:pl-[64px] text-[14px] leading-[1.6] text-ink/80">Engagements start at
+            the equivalent of one extra admission per month. We scope per-school after the audit — pricing depends on
+            shoot days, ad spend, and campaign length. No retainer lock-ins.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- ============== FINAL CTA ============== -->
+  <!-- FINAL CTA -->
   <section id="audit" class="px-5 md:px-10 lg:px-16 max-w-[1440px] mx-auto py-16 md:py-20">
-
     <div
       class="bg-ink text-white ink-border rounded-[24px] sm:rounded-[32px] sh-orange-8 relative overflow-hidden p-5 sm:p-7 md:p-12 lg:p-16">
-
       <div class="absolute -top-10 -right-10 w-52 h-52 rounded-full bg-orange/50 blur-[40px] pointer-events-none"></div>
       <div class="absolute -bottom-16 left-40 w-60 h-60 rounded-full bg-purple/30 blur-[60px] pointer-events-none">
       </div>
-
       <div class="grid lg:grid-cols-[1.2fr_1fr] gap-10 md:gap-16 items-start relative z-10">
-
         <div data-anim="fade-up">
           <div
             class="bg-sun ink-border rounded-full inline-flex items-center gap-2 px-4 py-2 text-[12px] font-bold tracking-[0.08em] uppercase text-ink mb-5">
-            <span class="w-2 h-2 rounded-full bg-ink"></span>
-            Free School Audit · 30 min
+            <span class="w-2 h-2 rounded-full bg-ink"></span>Free School Audit · 30 min
           </div>
-
-          <h2 class="h-cta">
-            Show us your<br />
-            funnel. <span class="font-hand text-sun font-bold">We'll show</span><br />
-            you the leak.
-          </h2>
-
-          <p class="text-[16px] md:text-[18px] leading-[1.55] text-white/65 mt-7 max-w-[460px]">
-            30 minutes with our admissions strategist. Walk away with a written diagnostic — three specific fixes ranked
-            by impact. No deck. No retainer. No obligation.
-          </p>
-
+          <h2 class="h-cta">Show us your<br>funnel. <span class="font-hand text-sun font-bold">We'll show</span><br>you
+            the leak.</h2>
+          <p class="text-[16px] md:text-[18px] leading-[1.55] text-white/65 mt-7 max-w-[460px]">30 minutes with our
+            admissions strategist. Walk away with a written diagnostic — three specific fixes ranked by impact. No deck.
+            No retainer. No obligation.</p>
           <ul class="flex flex-wrap gap-2.5 mt-7">
             <li class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-[13px] font-medium">✓ No retainer
             </li>
@@ -884,7 +832,6 @@
             <li class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-[13px] font-medium">✓ Hindi /
               English / Marwari</li>
           </ul>
-
           <div class="flex items-center gap-4 mt-10">
             <div class="flex">
               <div class="w-11 h-11 rounded-full ink-border flex items-center justify-center relative z-40"
@@ -914,83 +861,70 @@
             </div>
           </div>
         </div>
-
         <form id="auditForm"
           class="bg-white text-ink ink-border rounded-[20px] sh-orange-4 p-4 sm:p-6 md:p-8 self-start"
           data-anim="fade-up" onsubmit="handleSubmit(event)">
-
           <div
             class="bg-mint ink-border rounded-full inline-block px-3 sm:px-3.5 py-1 sm:py-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.08em] uppercase mb-4 sm:mb-5">
-            ● 4 slots open this week
-          </div>
-
+            ● 4 slots open this week</div>
           <div class="space-y-2.5 sm:space-y-3.5">
             <div>
               <label class="block text-[11px] sm:text-[12px] font-bold text-ink/70 mb-1 sm:mb-1.5">Your name</label>
               <input id="f_name" type="text" placeholder="Mrs. R. Sharma" required
-                class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition" />
+                class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition">
             </div>
             <div>
               <label class="block text-[11px] sm:text-[12px] font-bold text-ink/70 mb-1 sm:mb-1.5">School name</label>
               <input id="f_school" type="text" placeholder="St. Xavier's Senior Secondary" required
-                class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition" />
+                class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition">
             </div>
             <div>
               <label class="block text-[11px] sm:text-[12px] font-bold text-ink/70 mb-1 sm:mb-1.5">Your role</label>
               <input id="f_role" type="text" placeholder="Principal / Director / Trustee" required
-                class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition" />
+                class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition">
             </div>
-
-            <!-- Two-col on mobile: City + Phone -->
             <div class="grid grid-cols-2 gap-2.5 sm:gap-3.5">
               <div>
                 <label class="block text-[11px] sm:text-[12px] font-bold text-ink/70 mb-1 sm:mb-1.5">City</label>
                 <input id="f_city" type="text" placeholder="Jaipur" required
-                  class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition" />
+                  class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition">
               </div>
               <div>
                 <label class="block text-[11px] sm:text-[12px] font-bold text-ink/70 mb-1 sm:mb-1.5">Phone</label>
                 <input id="f_phone" type="tel" placeholder="+91 ..." required
-                  class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition" />
+                  class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition">
               </div>
             </div>
-
             <div>
               <label class="block text-[11px] sm:text-[12px] font-bold text-ink/70 mb-1 sm:mb-1.5">Email</label>
               <input id="f_email" type="email" placeholder="principal@yourschool.in" required
-                class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition" />
+                class="w-full bg-paper ink-border rounded-lg sm:rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[13px] sm:text-sm outline-none focus:border-orange transition">
             </div>
-
             <button type="submit"
               class="w-full bg-orange text-white ink-border rounded-lg sm:rounded-xl py-3 sm:py-4 text-[13px] sm:text-[15px] font-bold sh-3 btn-press inline-flex items-center justify-center gap-2 sm:gap-2.5 mt-1 sm:mt-2">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="sm:w-[18px] sm:h-[18px]">
                 <path
                   d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
               </svg>
-              Send via WhatsApp
-              <span>→</span>
+              Send via WhatsApp<span>→</span>
             </button>
-
-            <div class="text-[10px] sm:text-[11px] text-ink/60 text-center pt-1">
-              We respond within 4 business hours · Mon–Sat
-            </div>
+            <div class="text-[10px] sm:text-[11px] text-ink/60 text-center pt-1">We respond within 4 business hours ·
+              Mon–Sat</div>
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ============== FOOTER ============== -->
+  <!-- FOOTER -->
   <footer class="px-5 md:px-10 lg:px-16 max-w-[1440px] mx-auto py-8 md:py-10">
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-5 text-[13px] text-ink/65">
       <div class="flex items-center gap-3 flex-wrap">
-        <img src="tcp-logo.jpeg" alt="TCP" class="w-8 h-8 rounded-full ink-border object-cover" />
+        <img src="tcp-logo.jpeg" alt="TCP" class="w-8 h-8 rounded-full ink-border object-cover">
         <span class="font-bold text-ink">Thrive Clip Productions</span>
         <span class="hidden md:inline">·</span>
         <a href="https://share.google/hy3mlt7kmtoccVaSR" target="_blank" rel="noopener"
-          class="hover:text-orange transition inline-flex items-center gap-1">
-          <span>📍</span> Jaipur, Rajasthan
-        </a>
+          class="hover:text-orange transition inline-flex items-center gap-1"><span>📍</span> Jaipur, Rajasthan</a>
       </div>
       <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
         <a href="mailto:thriveclipproductions@gmail.com"
@@ -1000,7 +934,7 @@
     </div>
   </footer>
 
-  <!-- ============== SCRIPTS ============== -->
+  <!-- SCRIPTS -->
   <script type="module">
     import { animate, inView } from "https://cdn.jsdelivr.net/npm/motion@10.18.0/+esm";
 
@@ -1014,46 +948,25 @@
     document.querySelectorAll('[data-anim]').forEach((el) => {
       el.style.transform = 'translateY(28px)';
       inView(el, () => {
-        animate(
-          el,
-          { opacity: [0, 1], transform: ['translateY(28px)', 'translateY(0px)'] },
-          { duration: 0.7, easing: [0.16, 1, 0.3, 1] }
-        );
+        animate(el, { opacity: [0, 1], transform: ['translateY(28px)', 'translateY(0px)'] }, { duration: 0.7, easing: [0.16, 1, 0.3, 1] });
       }, { amount: 0.15 });
     });
 
-    // FAQ accordion behavior
+    // FAQ accordion
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
       item.addEventListener('toggle', () => {
         if (item.open) {
-          item.classList.remove('sh-2');
-          item.classList.add('sh-4');
-          // close others
-          faqItems.forEach(other => {
-            if (other !== item && other.open) {
-              other.open = false;
-              other.classList.remove('sh-4');
-              other.classList.add('sh-2');
-            }
-          });
-        } else {
-          item.classList.remove('sh-4');
-          item.classList.add('sh-2');
-        }
+          item.classList.remove('sh-2'); item.classList.add('sh-4');
+          faqItems.forEach(other => { if (other !== item && other.open) { other.open = false; other.classList.remove('sh-4'); other.classList.add('sh-2'); } });
+        } else { item.classList.remove('sh-4'); item.classList.add('sh-2'); }
       });
     });
 
-    // ============================================================
-    // GOOGLE SHEET INTEGRATION
-    // ============================================================
-    // Apni Google Apps Script "Web app URL" yaha paste karo.
-    // Setup steps `google-apps-script.gs` file ke top me likhe hai.
-    // Example: "https://script.google.com/macros/s/AKfyc.../exec"
+    // Google Sheet
     const SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzks7U0pUUNMEEe0mogxX7mtRSE3_ZTkUhhFX1I0-vhCCDaafVFq-ECJ1JAWrQ-NG6t4g/exec";
-    // ============================================================
 
-    // Form submit handler — save to Google Sheet + open WhatsApp
+    // Form submit — Lead fires ONLY ONCE here
     window.handleSubmit = async (e) => {
       e.preventDefault();
       const form = e.target;
@@ -1069,33 +982,20 @@
         email: document.getElementById('f_email').value.trim(),
       };
 
-      // Show "saving..." state
       btn.innerHTML = '⏳ Saving…';
       btn.style.background = '#ffd60a';
       btn.style.color = '#1a1a2e';
       btn.disabled = true;
 
-      // 1) Send data to Google Sheet (fire-and-forget; don't block UX)
       if (SHEET_SCRIPT_URL && !SHEET_SCRIPT_URL.includes("PASTE_YOUR")) {
         try {
           const formData = new FormData();
           Object.entries(lead).forEach(([k, v]) => formData.append(k, v));
-          // We use no-cors so Apps Script accepts; response is opaque, that's fine
-          await fetch(SHEET_SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            body: formData,
-          });
-        } catch (err) {
-          console.warn('Sheet save failed (continuing to WhatsApp):', err);
-        }
-      } else {
-        console.warn('SHEET_SCRIPT_URL not set — skipping Google Sheet save.');
+          await fetch(SHEET_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: formData });
+        } catch (err) { console.warn('Sheet save failed:', err); }
       }
 
-      // 2) Build WhatsApp message
-      const message =
-        `Hello team ThriveClip Productions,
+      const message = `Hello team ThriveClip Productions,
 I am interested in your services for our school.
 Here are my details:
 👤 Name: ${lead.name}
@@ -1106,15 +1006,11 @@ Here are my details:
 📧 Email: ${lead.email}
 Please contact me at your earliest convenience.
 Thank you!`;
-
       const whatsappUrl = `https://wa.me/917258055245?text=${encodeURIComponent(message)}`;
 
-      // 3) Track Lead event (only once on form submit)
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead');
-      }
+      // ===== LEAD TRACKING ONLY HERE - ONE TIME =====
+      if (typeof fbq !== 'undefined') { fbq('track', 'Lead'); }
 
-      // 4) Open WhatsApp + reset
       btn.innerHTML = '✓ Opening WhatsApp…';
       btn.style.background = '#86efac';
 
@@ -1128,7 +1024,6 @@ Thank you!`;
       }, 600);
     };
   </script>
-
 </body>
 
 </html>
