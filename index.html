@@ -246,6 +246,26 @@
     }
   </style>
   <base target="_blank">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '858425540607596');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=858425540607596&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+  <base target="_blank">
 </head>
 
 <body class="overflow-x-hidden">
@@ -269,7 +289,7 @@
         <a href="#faq" class="px-5 py-2.5 text-sm font-semibold rounded-full hover:bg-sun transition">FAQ</a>
       </nav>
 
-      <a href="#audit"
+      <a href="#audit" onclick="if(typeof fbq!=='undefined')fbq('track','Lead');"
         class="hidden md:inline-flex items-center gap-2.5 bg-orange text-white ink-border rounded-full px-5 py-3 text-sm font-bold sh-4 btn-press"
         data-anim="fade-down">
         <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -292,7 +312,7 @@
         <li><a href="#voices" class="block py-2.5 font-semibold">Schools</a></li>
         <li><a href="#voices" class="block py-2.5 font-semibold">Voices</a></li>
         <li><a href="#faq" class="block py-2.5 font-semibold">FAQ</a></li>
-        <li class="pt-2"><a href="#audit"
+        <li class="pt-2"><a href="#audit" onclick="if(typeof fbq!=='undefined')fbq('track','Lead');"
             class="block bg-orange text-white text-center ink-border rounded-full py-3 font-bold sh-3">Free School Audit
             →</a></li>
       </ul>
@@ -358,6 +378,7 @@
           <input type="url" placeholder="Your school's website…"
             class="flex-1 bg-transparent outline-none px-5 py-3 text-[15px] placeholder:text-ink/45 min-w-0" />
           <button
+            onclick="if(typeof fbq!=='undefined')fbq('track','Lead');document.getElementById('audit').scrollIntoView({behavior:'smooth'});"
             class="bg-orange text-white ink-border rounded-full px-5 py-3 text-sm font-bold whitespace-nowrap inline-flex items-center gap-2 btn-press">
             Book Free Audit <span>→</span>
           </button>
@@ -1108,7 +1129,12 @@ Thank you!`;
 
       const whatsappUrl = `https://wa.me/917258055245?text=${encodeURIComponent(message)}`;
 
-      // 3) Open WhatsApp + reset
+      // 3) Track Lead event in Meta Pixel
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead');
+      }
+
+      // 4) Open WhatsApp + reset
       btn.innerHTML = '✓ Opening WhatsApp…';
       btn.style.background = '#86efac';
 
