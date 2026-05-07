@@ -246,26 +246,7 @@
     }
   </style>
   <base target="_blank">
-  <!-- Meta Pixel Code -->
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '858425540607596');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=858425540607596&ev=PageView&noscript=1" /></noscript>
-  <!-- End Meta Pixel Code -->
-  <base target="_blank">
+<base target="_blank">
 </head>
 
 <body class="overflow-x-hidden">
@@ -289,7 +270,7 @@
         <a href="#faq" class="px-5 py-2.5 text-sm font-semibold rounded-full hover:bg-sun transition">FAQ</a>
       </nav>
 
-      <a href="#audit" onclick="if(typeof fbq!=='undefined')fbq('track','Lead');"
+      <a href="#audit"
         class="hidden md:inline-flex items-center gap-2.5 bg-orange text-white ink-border rounded-full px-5 py-3 text-sm font-bold sh-4 btn-press"
         data-anim="fade-down">
         <span class="w-2 h-2 rounded-full bg-white"></span>
@@ -312,7 +293,7 @@
         <li><a href="#voices" class="block py-2.5 font-semibold">Schools</a></li>
         <li><a href="#voices" class="block py-2.5 font-semibold">Voices</a></li>
         <li><a href="#faq" class="block py-2.5 font-semibold">FAQ</a></li>
-        <li class="pt-2"><a href="#audit" onclick="if(typeof fbq!=='undefined')fbq('track','Lead');"
+        <li class="pt-2"><a href="#audit"
             class="block bg-orange text-white text-center ink-border rounded-full py-3 font-bold sh-3">Free School Audit
             →</a></li>
       </ul>
@@ -378,7 +359,6 @@
           <input type="url" placeholder="Your school's website…"
             class="flex-1 bg-transparent outline-none px-5 py-3 text-[15px] placeholder:text-ink/45 min-w-0" />
           <button
-            onclick="if(typeof fbq!=='undefined')fbq('track','Lead');document.getElementById('audit').scrollIntoView({behavior:'smooth'});"
             class="bg-orange text-white ink-border rounded-full px-5 py-3 text-sm font-bold whitespace-nowrap inline-flex items-center gap-2 btn-press">
             Book Free Audit <span>→</span>
           </button>
@@ -398,7 +378,7 @@
 
         <!-- TOP ROW: Admissions + Cost/Lead -->
         <div
-          class="flex items-start justify-between w-full px-2 lg:absolute lg:top-[5%] lg:left-[10%] lg:right-[10%] lg:px-0 z-20">
+          class="flex items-start justify-between w-full px-2 lg:absolute lg:top-[8%] lg:left-[5%] lg:right-[5%] lg:px-0 z-20">
           <!-- Admissions card -->
           <div class="bg-white ink-border rounded-2xl p-3 sm:p-4 sh-4 floaty -rotate-[4deg] w-[150px] sm:w-[170px]"
             style="--r:-4deg; animation-delay:.2s;">
@@ -421,14 +401,14 @@
 
         <!-- CENTER: Pink circle with emoji -->
         <div
-          class="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 rounded-full ink-border sh-6 floaty overflow-hidden flex items-end justify-center z-10"
+          class="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 mx-auto lg:mx-0 rounded-full ink-border sh-6 floaty overflow-hidden flex items-end justify-center z-10"
           style="background: linear-gradient(135deg, #f9a8d4 0%, #ff6a3d 100%); --r:0deg;">
-          <div class="text-[150px] sm:text-[170px] lg:text-[240px] -mb-2 leading-none">👩‍🏫</div>
+          <div class="text-[150px] sm:text-[170px] lg:text-[230px] -mb-2 leading-none">👩‍🏫</div>
         </div>
 
         <!-- BOTTOM ROW: 40+ schools + Quote -->
         <div
-          class="flex items-end justify-between w-full px-2 lg:absolute lg:bottom-[5%] lg:left-[10%] lg:right-[10%] lg:px-0 z-20">
+          class="flex items-end justify-between w-full px-2 lg:absolute lg:bottom-[8%] lg:left-[5%] lg:right-[5%] lg:px-0 z-20">
           <!-- Trophy badge -->
           <div class="bg-white ink-border rounded-3xl px-4 py-2.5 sm:px-5 sm:py-3 sh-3 floaty flex items-center gap-2.5"
             style="--r:0deg; animation-delay:1s;">
@@ -1129,7 +1109,7 @@ Thank you!`;
 
       const whatsappUrl = `https://wa.me/917258055245?text=${encodeURIComponent(message)}`;
 
-      // 3) Track Lead event in Meta Pixel
+      // 3) Track Lead event (only once on form submit)
       if (typeof fbq !== 'undefined') {
         fbq('track', 'Lead');
       }
