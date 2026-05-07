@@ -246,18 +246,59 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      padding-left: 1rem;
+      width: 100%;
     }
 
     .hero-center-circle {
       position: relative;
       margin-left: auto;
       margin-right: auto;
+      left: 0;
+      right: 0;
     }
 
-    @media (max-width: 640px) {
-      .hero-center-circle {
-        margin-left: 2rem;
+    .hero-top-cards {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+    }
+
+    .hero-bottom-cards {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-right-wrapper {
+        height: 100%;
+        min-height: 540px;
+      }
+
+      .hero-top-cards {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+        margin-bottom: 0;
+      }
+
+      .hero-bottom-cards {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90%;
+        margin-top: 0;
       }
     }
 
@@ -438,7 +479,7 @@
       </div>
 
       <!-- RIGHT - CENTERED on all devices -->
-      <div class="hero-right-wrapper w-full max-w-[400px] mx-auto mt-4 lg:mt-0" data-anim="fade-up">
+      <div class="hero-right-wrapper w-full mx-auto mt-4 lg:mt-0 flex items-center justify-center" data-anim="fade-up">
         <!-- TOP ROW -->
         <div class="hero-top-cards flex items-start justify-between w-full px-2 z-20">
           <div class="bg-white ink-border rounded-2xl p-3 sm:p-4 sh-4 floaty -rotate-[4deg] w-[150px] sm:w-[170px]"
@@ -461,7 +502,7 @@
 
         <!-- CENTER: Girl Emoji Circle - CENTERED -->
         <div
-          class="hero-center-circle w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] rounded-full ink-border sh-6 floaty overflow-hidden flex items-end justify-center z-10 my-4 lg:my-0 ml-4 sm:ml-6 lg:ml-0"
+          class="hero-center-circle w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] lg:w-[420px] lg:h-[420px] rounded-full ink-border sh-6 floaty overflow-hidden flex items-end justify-center z-10 my-4 lg:my-0 mx-auto"
           style="background: linear-gradient(135deg, #f9a8d4 0%, #ff6a3d 100%); --r:0deg;">
           <div class="text-[150px] sm:text-[170px] lg:text-[240px] -mb-2 leading-none">👩‍🏫</div>
         </div>
